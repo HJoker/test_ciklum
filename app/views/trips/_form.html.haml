@@ -1,0 +1,9 @@
+= simple_form_for(@trip) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :country_id
+    = f.input :visit_date
+
+  .form-actions
+    = f.button :submit

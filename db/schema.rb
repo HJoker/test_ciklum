@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311171427) do
+ActiveRecord::Schema.define(version: 20150312135427) do
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "country_currencies", force: true do |t|
+    t.integer  "country_id"
+    t.integer  "currency_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "country_currencies", ["country_id"], name: "index_country_currencies_on_country_id", using: :btree
+  add_index "country_currencies", ["currency_id"], name: "index_country_currencies_on_currency_id", using: :btree
+
+  create_table "currencies", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "currencies", ["country_id"], name: "index_currencies_on_country_id", using: :btree
+
+  create_table "trips", force: true do |t|
+    t.integer  "country_id"
+    t.date     "visit_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

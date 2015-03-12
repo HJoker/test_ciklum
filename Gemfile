@@ -7,15 +7,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'devise'
 gem 'haml-rails'
 gem 'mysql2'
 gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
-gem 'upmin-admin'
+gem 'savon', '~> 2.7.2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -34,7 +32,6 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
-  gem 'spring-commands-rspec'
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -46,4 +43,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem "mocha"
 end
+
