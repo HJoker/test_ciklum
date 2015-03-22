@@ -3,13 +3,13 @@ require 'savon'
 class WebService
   attr_accessor :client, :call_result
 
-  def initialize(wsdl)
-    @wsdl = wsdl
+  def initialize
+    @wsdl = ENV['WSDL']
     @client = nil
   end
 
   def client
-    raise "wsdl URL was not set" if @wsdl.blank?
+    raise "WSDL URL was not set. Set WSDL in #{Rails.root}/config/savon_config.yml" if @wsdl.blank?
 
     options = { wsdl: @wsdl, open_timeout: 5, read_timeout: 5,
                 pretty_print_xml: true, raise_errors: false }

@@ -1,12 +1,13 @@
-%p#notice= notice
+.panel.panel-default
+  .panel-heading
+    %p#notice= notice
+    .btn.btn-default= link_to 'Edit', edit_country_path(@country)
+    .btn.btn-default= link_to 'Back', countries_path
 
-%p
-  %b Name:
-  = @country.name
-%p
-  %b Code:
-  = @country.code
-
-= link_to 'Edit', edit_country_path(@country)
-\|
-= link_to 'Back', countries_path
+  .panel-body
+    %p
+      %b Name:
+      = @country.name
+    %p
+      %b Code:
+      = @country.code

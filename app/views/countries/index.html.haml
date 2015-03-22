@@ -1,23 +1,24 @@
-%h1 Listing countries
+.panel.panel-default
+  .panel-heading
+    %h1 Listing countries
+    .btn.btn-default= link_to 'New Country', new_country_path
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Code
-      %th
-      %th
-      %th
 
-  %tbody
-    - @countries.each do |country|
-      %tr
-        %td= country.name
-        %td= country.code
-        %td= link_to 'Show', country
-        %td= link_to 'Edit', edit_country_path(country)
-        %td= link_to 'Destroy', country, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .panel-body
+    %table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Name
+          %th Code
+          %th
+          %th
+          %th
 
-%br
-
-= link_to 'New Country', new_country_path
+      %tbody
+        - @countries.each do |country|
+          %tr
+            %td= country.name
+            %td= country.code
+            %td= link_to 'Show', country
+            %td= link_to 'Edit', edit_country_path(country)
+            %td= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,7 +1,9 @@
-%h1 Editing currency
+.panel.panel-default
+  .panel-heading
+    %h1 Editing currency
+    .btn.btn-default= link_to 'Show', @currency
+    .btn.btn-default= link_to 'Back', currencies_path
 
-= render 'form'
 
-= link_to 'Show', @currency
-\|
-= link_to 'Back', currencies_path
+  .panel-body
+    = render 'form'

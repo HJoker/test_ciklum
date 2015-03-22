@@ -1,24 +1,5 @@
-class CountriesController < ApplicationController
-  before_action :set_country, only: [:show, :edit, :update, :destroy]
-
+class CountriesController < InheritedResources::Base
   respond_to :html
-
-  def index
-    @countries = Country.all
-    respond_with(@countries)
-  end
-
-  def show
-    respond_with(@country)
-  end
-
-  def new
-    @country = Country.new
-    respond_with(@country)
-  end
-
-  def edit
-  end
 
   def create
     @country = Country.new(country_params)
@@ -27,20 +8,13 @@ class CountriesController < ApplicationController
   end
 
   def update
+    @country = Country.find(params[:id])
     flash[:notice] = 'Country was successfully updated.' if @country.update(country_params)
     respond_with(@country)
   end
 
-  def destroy
-    @country.destroy
-    respond_with(@country)
-  end
-
   private
-    def set_country
-      @country = Country.find(params[:id])
-    end
-
+  
     def country_params
       params.require(:country).permit(:name, :code)
     end

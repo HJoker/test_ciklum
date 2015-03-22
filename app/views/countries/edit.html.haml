@@ -1,7 +1,9 @@
-%h1 Editing country
+.panel.panel-default
+  .panel-heading
+    %h1 Editing country
+    .btn.btn-default= link_to 'Show', @country
+    .btn.btn-default= link_to 'Back', countries_path
 
-= render 'form'
 
-= link_to 'Show', @country
-\|
-= link_to 'Back', countries_path
+  .panel-body
+    = render 'form'

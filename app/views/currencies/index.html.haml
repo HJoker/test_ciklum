@@ -1,25 +1,26 @@
-%h1 Listing currencies
+.panel.panel-default
+  .panel-heading
+    %h1 Listing currencies
+    .btn.btn-default= link_to 'New Currency', new_currency_path
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Code
-      %th Country
-      %th
-      %th
-      %th
+  .panel-body
+    %table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Name
+          %th Code
+          %th Country
+          %th
+          %th
+          %th
 
-  %tbody
-    - @currencies.each do |currency|
-      %tr
-        %td= currency.name
-        %td= currency.code
-        %td= currency.country
-        %td= link_to 'Show', currency
-        %td= link_to 'Edit', edit_currency_path(currency)
-        %td= link_to 'Destroy', currency, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %tbody
+        - @currencies.each do |currency|
+          %tr
+            %td= currency.name
+            %td= currency.code
+            %td= currency.country_name
+            %td= link_to 'Show', currency
+            %td= link_to 'Edit', edit_currency_path(currency)
+            %td= link_to 'Destroy', currency, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-
-= link_to 'New Currency', new_currency_path

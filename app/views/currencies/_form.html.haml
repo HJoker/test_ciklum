@@ -1,10 +1,10 @@
-= simple_form_for(@currency) do |f|
+= simple_form_for(@currency, wrapper: :vertical_form) do |f|
   = f.error_notification
-
   .form-inputs
     = f.input :name
     = f.input :code
     = f.association :country
 
   .form-actions
-    = f.button :submit
+    .btn.btn-primary= f.button :submit
+

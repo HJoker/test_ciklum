@@ -9,11 +9,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'haml-rails'
-gem 'mysql2'
+gem 'sqlite3'
 gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'savon', '~> 2.7.2'
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'inherited_resources'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -43,6 +46,6 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem "mocha"
+  gem 'mocha'
 end
 

@@ -1,5 +1,8 @@
-%h1 New currency
+.panel.panel-default
+  .panel-heading
+    %h1 New currency
+    .btn.btn-default= link_to 'Back', currencies_path
 
-= render 'form'
 
-= link_to 'Back', currencies_path
+  .panel-body
+    = render 'form'
