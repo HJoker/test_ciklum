@@ -9,7 +9,7 @@ class WebService
   end
 
   def client
-    raise "WSDL URL was not set. Set WSDL in #{Rails.root}/config/savon_config.yml" if @wsdl.blank?
+    raise "WSDL URL was not set. Set WSDL in #{Rails.root}/config/.env.#{Rails.env}" if @wsdl.blank?
 
     options = { wsdl: @wsdl, open_timeout: 5, read_timeout: 5,
                 pretty_print_xml: true, raise_errors: false }

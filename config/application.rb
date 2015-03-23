@@ -20,6 +20,9 @@ module TestCiklum
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
+    filename = "#{Rails.root}/lib/loaders/load_env_config.rb"
+    load(filename) if File.exist?(filename)
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
